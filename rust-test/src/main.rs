@@ -1,22 +1,19 @@
-use mathfix::basic_operations::{ Basic, BasicErrors };
+use mathfix::Basic;
 
-fn main(){
+fn main() {
+    let mut res = 0;
+    Basic::add_u64(100, 20, &mut res);
+    println!("Resultado adicao: {}", res);
 
-    let sum1 = Basic::add_usize(10, usize::MIN);
-    match sum1 {
-        Ok(value) => println!("Soma: {}", value),
-        Err(e) => {
-            println!("Erro: {:?}", e);
-            std::process::exit(1);
-        }
-    }
+    let mut res = 0;
+    Basic::subtract_u64(100, 20, &mut res);
+    println!("Resultado subtracao: {}", res);
 
-    let sum2 = Basic::add_usize(10, usize::MAX);
-    match sum2 {
-        Ok(value) => println!("Soma: {}", value),
-        Err(e) => {
-            println!("Erro: {:?}", e);
-            std::process::exit(1);
-        }
-    }
+    let mut res = 0;
+    Basic::multiply_u64(100, 20, &mut res);
+    println!("Resultado multiplicacao: {}", res);
+
+    let mut res = 0;
+    Basic::divide_u64(100, 20, &mut res);
+    println!("Resultado divisao: {}", res);
 }
