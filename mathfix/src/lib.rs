@@ -1,3 +1,3 @@
 pub mod basic_operations;
 
-pub use basic_operations::{ Basic, BasicErrors };
+pub use basic_operations::{ Basic, StatusCode };
