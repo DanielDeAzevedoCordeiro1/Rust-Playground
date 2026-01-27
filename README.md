@@ -1,6 +1,17 @@
 # Mathfix (Apenas para aprendizado)
 
-## Se trata de uma simples lib que futuramente quero testar a integracao e uso em outras linguagens
+## Se trata de uma simples lib para testar a integracao e uso em outras linguagens.
+
+A ideia e compreender como uma lib e consumida por outras linguagens.
+Compreender assuntos como:
+
+[ABI](https://doc.rust-lang.org/reference/abi.html) Define como código binário se comunica.   
+[FFI](https://doc.rust-lang.org/nomicon/ffi.html) Permite chamar código de outra linguagem via um ABI comum.  
+[cdylib](https://doc.rust-lang.org/reference/linkage.html) Crate type.  
+[ctypes](https://docs.python.org/3/library/ctypes.html) API do [Python](https://www.python.org/doc/) para chamar bibliotecas nativas (ABI C)
+
+
+
 
 ### Como usar:
 
@@ -11,22 +22,54 @@ Clone a Lib
 git clone https://github.com/DanielDeAzevedoCordeiro1/Rust-Playground.git
 ```
 
-Depois em outro terminal crie um novo projeto
+Acesse o projeto
 ```bash
-cargo new "nome-do-projeto"
+cd Rust-Playground
 ```
 
-Acesso a pasta e va ate o arquivo Cargo.toml e adicione a lib para testar
+## Testando a lib usando Rust
+
+Voce pode testar a lib e/ou alterar o main.rs para testar todas as funcoes. Use o cargo e siga o seguinte passo a passo:
+
+Acesse o projeto rust-test
 ```bash
-[dependencies]
-mathfix = { path = 'caminho-da-lib'}
+cd rust-test
 ```
 
-
-Depois no seu main.rs chame a lib e teste
+Rode o projeto
 ```bash
-cargo run 
+cargo run
 ```
-![Testando a Lib](assets/test-lib.png)
 
+## Testando a lib usando Python
 
+Voce tambem testar usando codigo Python. obs: Nao e necessario ter o python instalado , apenas o docker.
+
+Va para a raiz do projeto (Rust-Playground) e rode o comando (Este comando ira realizar o build da lib e depois move-la para o diretorio python-test):
+```bash
+bash ./build-python-lib.sh
+```
+
+Depois rode este comando (Ele ira gerar uma imagem da (lib/main.py) e subira um container docker):
+```bash
+bash ./build-docker.sh
+```
+
+# Extra
+
+Caso queira alterar o arquivo .py sem precisar gerar outra imagem. Instale o nano no seu container e utilize o nano para editar o arquivo main.py .
+
+Baixe o nano no container python
+```bash
+apt update && apt install -y nano
+```
+
+Altere o arquivo:
+```bash
+nano main.py
+```
+
+Rode novamente:
+```bash
+python main.py
+```
