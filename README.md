@@ -43,7 +43,7 @@ cargo run
 
 ## Testando a lib usando Python
 
-Voce tambem testar usando codigo Python. obs: Nao e necessario ter o python instalado , apenas o docker.
+Voce tambem pode testar usando codigo Python. obs: Nao e necessario ter o python instalado , apenas o docker.
 
 Va para a raiz do projeto (Rust-Playground) e rode o comando (Este comando ira realizar o build da lib e depois move-la para o diretorio python-test):
 ```bash
