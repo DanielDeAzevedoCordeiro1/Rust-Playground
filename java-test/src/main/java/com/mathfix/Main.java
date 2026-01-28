@@ -1,7 +1,7 @@
-package com.jna;
+package com.mathfix;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("...JNA Teste...");
+        System.out.println("Mathfix...");
     }
 }
