@@ -45,6 +45,8 @@ cargo run
 
 Voce tambem pode testar usando codigo Python. obs: Nao e necessario ter o python instalado , apenas o docker.
 
+### Como testar:
+
 Va para a raiz do projeto (Rust-Playground) e rode o comando (Este comando ira realizar o build da lib e depois move-la para o diretorio python-test):
 ```bash
 bash ./build-python-lib.sh
@@ -54,6 +56,24 @@ Depois rode este comando (Ele ira gerar uma imagem da (lib/main.py) e subira um 
 ```bash
 bash ./build-docker.sh
 ```
+
+## Testando a lib usando Java/Jna
+
+Para este caso de teste com Java usei o [JNA](https://www.alura.com.br/artigos/escrevendo-metodos-nativos-em-java-com-jni-e-jna?srsltid=AfmBOor2wcGEuqyBkVR51elnv7rNJinSIpopuuGR-OxeYzr-Ikv6bevJ) para fazer a intermediacao entre a biblioteca e a JVM, permitindo que nao haja a necessidade de se escrever um JNI para realizar interacao com bibliotecas compartilhadas.  
+
+### Como testar:
+
+Va para a raiz do projeto (Rust-Playground) e rode o comando (Este comando ira realizar o build da lib e depois move-la para o diretorio resources dentro de java-test):
+```bash
+bash ./build-java-lib.sh
+```
+
+Compile:
+```bash
+mvn clean package
+```
+
+
 
 # Extra
 
