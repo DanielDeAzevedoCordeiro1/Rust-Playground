@@ -54,7 +54,7 @@ bash ./build-python-lib.sh
 
 Depois rode este comando (Ele ira gerar uma imagem da (lib/main.py) e subira um container docker):
 ```bash
-bash ./build-docker.sh
+bash ./build-docker-python.sh
 ```
 
 ## Testando a lib usando Java/Jna
@@ -68,9 +68,14 @@ Va para a raiz do projeto (Rust-Playground) e rode o comando (Este comando ira r
 bash ./build-java-lib.sh
 ```
 
-Compile:
+Acesse a pasta java-test:
 ```bash
-mvn clean package
+cd java-test
+```
+
+Rode o comando (Este comando ira montar a imagem, subir o container e executar o .jar):
+```bash
+bash ./build-docker-java.sh
 ```
 
 
